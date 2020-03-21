@@ -1,4 +1,4 @@
-package klinserver
+package server
 
 import (
 	"errors"
