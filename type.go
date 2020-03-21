@@ -4,6 +4,11 @@ import (
 	"net/http"
 )
 
+// Keycrt the key and cert struct that stores the bytes
+type Keycrt struct {
+	Cb, Kb []byte
+}
+
 // ServerConfig is the configuration for the server
 type ServerConfig struct {
 	BindAddr     string            // This is the bind address

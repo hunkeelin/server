@@ -4,11 +4,6 @@ import (
 	"sync"
 )
 
-// The Key and crt in
-type Keycrt struct {
-	Cb, Kb []byte
-}
-
 type conn struct {
 	regex   string
 	apikey  string

@@ -33,7 +33,7 @@ func listenBytes(c *ServerConfig) error {
 		NextProtos: []string{http2.NextProtoTLS},
 	}
 	if c.Https {
-		for _, i := range c.CertBytes {
+		for i, _ := range c.CertBytes {
 			keycerts, err := tls.X509KeyPair(c.CertBytes[i], c.KeyBytes[i])
 			if err != nil {
 				return fmt.Errorf("certbytes and keybytes doesn't match %v", err)
