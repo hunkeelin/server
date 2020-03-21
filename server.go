@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-// Server: This is to start the server
+// Server This is to start the server
 func Server(c *ServerConfig) error {
 	if c.Https {
 		if c.CertBytes == nil || c.KeyBytes == nil || len(c.KeyBytes) != len(c.CertBytes) {

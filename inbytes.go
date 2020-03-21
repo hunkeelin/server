@@ -7,7 +7,7 @@ import (
 	"github.com/hunkeelin/pki"
 )
 
-//InBytesForm:  The form to modify ServerConfig so it will take everything in bytes, this form is only useful when you have a SuperCA server up and running.
+//InBytesForm  The form to modify ServerConfig so it will take everything in bytes, this form is only useful when you have a SuperCA server up and running.
 type InbytesForm struct {
 	Ca           string        // the hostname of the SuperCa server
 	Caport       string        // the port that SuperCA is being hosted on.
@@ -17,7 +17,8 @@ type InbytesForm struct {
 	Rootca       string        // the rootca, for SuperCA its default as rootca.crt
 }
 
-//Inbytes: The function only useful if you have a SuperCA server up and running and understand what it does.
+//Inbytes The function only useful if you have a SuperCA server up and running and understand what it does.
+
 func Inbytes(in InbytesForm) error {
 	r := klinutils.WgetInfo{
 		Dest:  in.Ca,
