@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-// This is to start the server
+// Server: This is to start the server
 func Server(c *ServerConfig) error {
 	if c.Https {
 		if c.CertBytes == nil || c.KeyBytes == nil || len(c.KeyBytes) != len(c.CertBytes) {
@@ -33,7 +33,7 @@ func listenBytes(c *ServerConfig) error {
 		NextProtos: []string{http2.NextProtoTLS},
 	}
 	if c.Https {
-		for i, _ := range c.CertBytes {
+		for _, i := range c.CertBytes {
 			keycerts, err := tls.X509KeyPair(c.CertBytes[i], c.KeyBytes[i])
 			if err != nil {
 				return fmt.Errorf("certbytes and keybytes doesn't match %v", err)

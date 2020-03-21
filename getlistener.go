@@ -8,7 +8,7 @@ import (
 	"net"
 )
 
-// Get the listener from server config
+// GetListener get the listener from server config
 func GetListener(c *ServerConfig) (net.Listener, error) {
 	var err error
 	var certlist []tls.Certificate
@@ -23,7 +23,7 @@ func GetListener(c *ServerConfig) (net.Listener, error) {
 		NextProtos: []string{http2.NextProtoTLS},
 	}
 	if c.Https {
-		for i, _ := range c.CertBytes {
+		for _, i := range c.CertBytes {
 			keycerts, err := tls.X509KeyPair(c.CertBytes[i], c.KeyBytes[i])
 			if err != nil {
 				return l, fmt.Errorf("certbytes and keybytes doesn't match %v", err)

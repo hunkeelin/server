@@ -77,11 +77,11 @@ func TestSserver(t *testing.T) {
 		CertBytes: certs,
 		KeyBytes:  keys,
 		Name2cert: map[string]Keycrt{
-			"test1.klin-pro.com": Keycrt{
+			"test1.klin-pro.com": {
 				Cb: t2c,
 				Kb: t2k,
 			},
-			"test2.klin-pro.com": Keycrt{
+			"test2.klin-pro.com": {
 				Cb: t1c,
 				Kb: t1k,
 			},

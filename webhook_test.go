@@ -68,7 +68,6 @@ func (c *conn) handleWebHook(w http.ResponseWriter, r *http.Request, p dowork) {
 		w.WriteHeader(status)
 		w.Write([]byte(msg))
 		fmt.Println(r.FormValue("filename"))
-		return
 	} else {
 		msg := "Got payload"
 		status := 200
@@ -85,6 +84,6 @@ func (c *conn) handleWebHook(w http.ResponseWriter, r *http.Request, p dowork) {
 		w.WriteHeader(status)
 		w.Write([]byte(msg))
 		fmt.Println(r.Header.Get("content-type"))
-		return
 	}
+	return
 }
